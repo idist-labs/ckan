@@ -3,4 +3,5 @@ Disallow: /dataset/rate/
 Disallow: /revision/
 Disallow: /dataset/*/history
 Disallow: /api/
+Disallow: /api-toanvm/
 Crawl-Delay: 10
