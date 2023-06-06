@@ -104,7 +104,7 @@ def _get_locales() -> list[str]:
     locale_default = config.get('ckan.locale_default')
     locale_order = config.get('ckan.locale_order')
 
-    locales = ['en']
+    locales = ['vi']
     i18n_path = get_ckan_i18n_dir()
     # For every file in the ckan i18n directory see if babel can understand
     # the locale. If yes, add it to the available locales
