@@ -2,10 +2,10 @@
 # Copyright (C) 2022 ORGANIZATION
 # This file is distributed under the same license as the ckan project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
-# 
+#
 # Translators:
 # Adrià Mercader <adria.mercader@okfn.org>, 2022
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -2019,7 +2019,7 @@ msgstr ""
 
 #: ckan/templates/home/snippets/search.html:17
 msgid "Popular tags"
-msgstr "Các thẻ phổ biến"
+msgstr "Tìm kiếm phổ biến"
 
 #: ckan/templates/home/snippets/stats.html:5
 msgid "{0} statistics"
