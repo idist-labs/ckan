@@ -1027,7 +1027,7 @@ groups:
   - annotation: Front-End Settings
     options:
       - key: ckan.site_title
-        default: CKAN
+        default: Cổng dữ liệu mở
         example: Open Data Scotland
         description: This sets the name of the site, as displayed in the CKAN web interface.
         editable: true
