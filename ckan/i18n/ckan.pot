@@ -3085,7 +3085,7 @@ msgstr ""
 
 #: ckan/templates/home/snippets/search.html:2
 msgid "E.g. environment"
-msgstr ""
+msgstr "Bạn cần tìm dữ liệu gì?"
 
 #: ckan/templates/home/snippets/search.html:6
 msgid "Search data"
