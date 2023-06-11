@@ -1,7 +1,7 @@
 $notificationsBg: #C9403A;
 .account-masthead {
     @extend .clearfix;
-    min-height: 30px;
+    //min-height: 30px;
     color: $mastheadTextColor;
     background: darken($mastheadBackgroundColor, 10%) url("#{$bgPath}");
     .account {
