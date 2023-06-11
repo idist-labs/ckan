@@ -194,7 +194,7 @@ class TestConfig(object):
         """Select a homepage style"""
         # current style
         index_response = app.get("/")
-        assert "<!-- Snippet home/layout1.html start -->" in index_response
+        assert "<!-- Snippet home/layout2.html start -->" in index_response
 
         # set new style css
         url = url_for(u"admin.config")
@@ -204,16 +204,16 @@ class TestConfig(object):
         # new style
         new_index_response = app.get("/")
         assert (
-            "<!-- Snippet home/layout1.html start -->"
+            "<!-- Snippet home/layout2.html start -->"
             not in new_index_response
         )
-        assert "<!-- Snippet home/layout2.html start -->" in new_index_response
+        assert "<!-- Snippet home/layout1.html start -->" in new_index_response
 
         # reset config value
         _reset_config(app, sysadmin_headers)
         reset_index_response = app.get("/")
         assert (
-            "<!-- Snippet home/layout1.html start -->" in reset_index_response
+            "<!-- Snippet home/layout2.html start -->" in reset_index_response
         )
 
 
