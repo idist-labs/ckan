@@ -2007,11 +2007,11 @@ msgstr "Đây là khu vực mô tả"
 
 #: ckan/templates/home/snippets/search.html:2
 msgid "E.g. environment"
-msgstr ""
+msgstr "Bạn cần tìm dữ liệu gì?"
 
 #: ckan/templates/home/snippets/search.html:7
 msgid "Search data"
-msgstr ""
+msgstr "Tìm kiếm dữ liệu"
 
 #: ckan/templates/home/snippets/search.html:9
 msgid "Search datasets"
