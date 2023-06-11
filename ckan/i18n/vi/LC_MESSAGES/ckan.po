@@ -1349,7 +1349,7 @@ msgstr "Thông tin"
 
 #: ckan/templates/header.html:114
 msgid "Search Datasets..."
-msgstr ""
+msgstr "Bạn cần tìm dữ liệu gì?"
 
 #: ckan/templates/header.html:115 ckan/templates/home/snippets/search.html:12
 #: ckan/templates/snippets/simple_search.html:5
@@ -2015,7 +2015,7 @@ msgstr ""
 
 #: ckan/templates/home/snippets/search.html:9
 msgid "Search datasets"
-msgstr ""
+msgstr "Bạn cần tìm dữ liệu gì?"
 
 #: ckan/templates/home/snippets/search.html:17
 msgid "Popular tags"
