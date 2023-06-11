@@ -13232,11 +13232,6 @@ td.diff_header {
   margin-top: 0;
 }
 
-@media (min-width: 576px) {
-  .hero {
-    background: url("../../../base/images/background-tile.png");
-  }
-}
 .hero:after {
   background-color: rgba(0, 0, 0, 0.09);
   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
@@ -13360,7 +13355,6 @@ td.diff_header {
 }
 
 .homepage .hero {
-  background: url("../../../base/images/background-tile.png");
   padding: 20px 0;
 }
 .homepage .module-promotion {
