@@ -11,6 +11,10 @@
             width: 100%;
             height: auto;
         }
+
+      &.search-rounded {
+        border-radius: 100px;
+      }
         button {
             cursor: pointer;
             display: block;

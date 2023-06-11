@@ -12791,6 +12791,9 @@ td.diff_header {
   width: 100%;
   height: auto;
 }
+.search-form .search-input.search-rounded {
+  border-radius: 100px;
+}
 .search-form .search-input button {
   cursor: pointer;
   display: block;
