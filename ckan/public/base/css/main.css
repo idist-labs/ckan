@@ -13523,12 +13523,15 @@ td.diff_header {
   border-radius: 4px;
 }
 
-.masthead {
-  background: #2067DD;
+.masthead-fixed {
   position: fixed;
-  z-index: 1000;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.masthead {
+  background: #2067DD;
 }
 .masthead .debug {
   position: fixed;
@@ -13591,9 +13594,6 @@ td.diff_header {
 }
 
 @media (max-width: 991.98px) {
-  .masthead {
-    position: unset;
-  }
   .masthead .main-navbar ul {
     padding: 0;
   }
