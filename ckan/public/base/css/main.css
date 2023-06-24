@@ -13357,9 +13357,6 @@ td.diff_header {
   margin-top: 20px;
 }
 
-.homepage .hero {
-  padding: 20px 0;
-}
 .homepage .module-promotion {
   background: #fff;
   padding: 30px;
@@ -13528,10 +13525,6 @@ td.diff_header {
 
 .masthead {
   background: #2067DD;
-  position: fixed;
-  z-index: 1000;
-  left: 50%;
-  transform: translateX(-50%);
 }
 .masthead .debug {
   position: fixed;
@@ -13594,6 +13587,12 @@ td.diff_header {
 }
 
 @media (max-width: 991.98px) {
+  .masthead {
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .masthead .main-navbar ul {
     padding: 0;
   }
