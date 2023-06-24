@@ -94,6 +94,10 @@ $notificationsBg: #C9403A;
 .masthead {
   //background: $mastheadBackgroundColor url("#{$bgPath}");
   background: $mastheadBackgroundColor;
+
+  z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%);
   @extend .p-2;
 
   .debug {
@@ -180,10 +184,8 @@ $notificationsBg: #C9403A;
 
 @include media-breakpoint-down(lg) {
   .masthead {
-    position: fixed;
-  z-index: 1000;
-  left: 50%;
-  transform: translateX(-50%);
+    position: unset;
+
     .main-navbar {
       ul {
         padding: 0;
