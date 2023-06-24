@@ -13528,6 +13528,10 @@ td.diff_header {
 
 .masthead {
   background: #2067DD;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .masthead .debug {
   position: fixed;
