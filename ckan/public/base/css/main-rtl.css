@@ -13650,6 +13650,12 @@ td.diff_header {
   background-image: linear-gradient(195deg, #cc0d00 0%, #e22113 100%);
 }
 
+.header-search-box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .site-footer {
   background: #2067DD url("../../../base/images/bg.png");
   padding: 20px 0;
