@@ -113,7 +113,7 @@
 
               {% endblock %}
 
-{#            {% if url_for(request.endpoint) != null or url_for(request.endpoint) != '/'  %}#}
+            {% if request.path != '/'  %}
               {% block header_site_search %}
                 <form class="d-flex site-search" action="{% url_for dataset_type ~ '.search' %}" method="get">
                   <label class="d-none" for="field-sitewide-search">{% block header_site_search_label %}
@@ -121,10 +121,10 @@
                   <input id="field-sitewide-search" class="form-control me-2" type="text" name="q"
                          placeholder="{{ _('Search') }}"
                          aria-label="{{ h.humanize_entity_type('package', dataset_type, 'search_placeholder') or _('Search datasets...') }}"/>
-                  <button class="btn" type="submit" aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i>request.path: {{ request.path }}</button>
+                  <button class="btn" type="submit" aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i></button>
                 </form>
               {% endblock %}
-{#            {% endif %}#}
+            {% endif %}
 
           </div>
         </nav>
