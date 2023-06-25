@@ -13361,6 +13361,10 @@ td.diff_header {
   margin-top: 20px;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .homepage .module-promotion {
   background: #fff;
   padding: 30px;
