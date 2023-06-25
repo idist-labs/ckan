@@ -2,21 +2,49 @@
 {% set placeholder = _('E.g. environment') %}
 {% set dataset_type = h.default_package_type() %}
 
-<div class="module-search card box">
-  <form class="module-content search-form" method="get" action="{% url_for dataset_type ~ '.search' %}">
-    <h3 class="heading">{{ _("Search data") }}</h3>
-    <div class="search-input form-group search-giant search-rounded">
-      <input aria-label="{% block header_site_search_label %}{{ h.humanize_entity_type('package', dataset_type, 'search placeholder') or _('Search datasets') }}{% endblock %}" id="field-main-search" type="text" class="form-control" name="q" value="" autocomplete="off" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}" />
-      <button class="btn" type="submit" aria-labelledby="search-label">
-        <i class="fa fa-search"></i>
-        <span class="sr-only" id="search-label">{{ _('Search') }}</span>
-      </button>
+{#<div class="module-search card box">#}
+{#  <form class="module-content search-form" method="get" action="{% url_for dataset_type ~ '.search' %}">#}
+{#    <h3 class="heading">{{ _("Search data") }}</h3>#}
+{#    <div class="search-input form-group search-giant search-rounded">#}
+{#      <input aria-label="{% block header_site_search_label %}{{ h.humanize_entity_type('package', dataset_type, 'search placeholder') or _('Search datasets') }}{% endblock %}" id="field-main-search" type="text" class="form-control" name="q" value="" autocomplete="off" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}" />#}
+{#      <button class="btn" type="submit" aria-labelledby="search-label">#}
+{#        <i class="fa fa-search"></i>#}
+{#        <span class="sr-only" id="search-label">{{ _('Search') }}</span>#}
+{#      </button>#}
+{#    </div>#}
+{#  </form>#}
+{#  <div class="tags">#}
+{#    <h3>{{ _('Popular tags') }}</h3>#}
+{#    {% for tag in tags %}#}
+{#      <a class="tag" href="{% url_for 'dataset.search', tags=tag.name %}">{{ tag.display_name|truncate(22) }}</a>#}
+{#    {% endfor %}#}
+{#  </div>#}
+{#</div>#}
+
+<header class="header-2">
+    <div class="page-header min-vh-75 relative"
+         style="background-image: url('/base/images/bg4.webp'); transform: translate3d(0px, 0px, 0px);min-height: 75vh">
+      <span class="mask bg-gradient-primary opacity-1"></span>
+      <div class="container header-search-box">
+        <div class="row">
+          <div class="col-lg-7 text-center mx-auto">
+            <h1 class="text-white pt-3 mt-n5 mb-2">PTIT Opendata Centre</h1>
+            <p class="lead text-white">Unlock Innovative Potentials</p>
+            <form action="{% url_for dataset_type ~ '.search' %}" method="get">
+              <div class="row">
+                <div class="col-8">
+                  <div class="input-group input-group-outline">
+                    <input type="text" class="form-control" name="q" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}"
+                           style="background-color: rgb(150 229 252 / 18%); color: white">
+                  </div>
+                </div>
+                <div class="col-4 ps-0 d-grid">
+                  <button type="submit" class="btn bg-gradient-primary text-white"><i class="fa fa-search"></i> Đến</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </form>
-  <div class="tags">
-    <h3>{{ _('Popular tags') }}</h3>
-    {% for tag in tags %}
-      <a class="tag" href="{% url_for 'dataset.search', tags=tag.name %}">{{ tag.display_name|truncate(22) }}</a>
-    {% endfor %}
-  </div>
-</div>
+  </header>

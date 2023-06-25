@@ -1,37 +1,11 @@
 <div role="main" class="hero">
-  <header class="header-2">
-    <div class="page-header min-vh-75 relative"
-         style="background-image: url('/base/images/bg4.webp'); transform: translate3d(0px, 0px, 0px);min-height: 75vh">
-      <span class="mask bg-gradient-primary opacity-1"></span>
-      <div class="container header-search-box">
-        <div class="row">
-          <div class="col-lg-7 text-center mx-auto">
-            <h1 class="text-white pt-3 mt-n5 mb-2">PTIT Opendata Centre</h1>
-            <p class="lead text-white">Unlock Innovative Potentials</p>
-            <form action="{% url_for 'dataset.search' %}" method="get">
-              <div class="row">
-                <div class="col-8">
-                  <div class="input-group input-group-outline">
-                    <input type="text" class="form-control" name="q" placeholder="Tìm kiếm bộ dữ liệu"
-                           style="background-color: rgb(150 229 252 / 18%); color: white">
-                  </div>
-                </div>
-                <div class="col-4 ps-0 d-grid">
-                  <button type="submit" class="btn bg-gradient-primary"><i class="fa fa-search"></i> Đến</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+
+  {% block search %}
+    {% snippet 'home/snippets/search.html', search_facets=search_facets %}
+  {% endblock %}
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        {% block search %}
-          {% snippet 'home/snippets/search.html', search_facets=search_facets %}
-        {% endblock %}
         {% block stats %}
           {% snippet 'home/snippets/stats.html' %}
         {% endblock %}
