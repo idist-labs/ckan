@@ -13631,6 +13631,20 @@ td.diff_header {
     cursor: default;
   }
 }
+.mask {
+  position: absolute;
+  background-size: cover;
+  background-position: center center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-gradient-primary {
+  background-image: linear-gradient(195deg, #cc0d00 0%, #e22113 100%);
+}
+
 .site-footer {
   background: #2067DD url("../../../base/images/bg.png");
   padding: 20px 0;
