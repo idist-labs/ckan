@@ -109,6 +109,8 @@
                   h.humanize_entity_type('group', group_type, 'main nav') or _('Groups'), ['group']),
 		            ('home.about', _('About')) ) }}
                 {% endblock %}
+
+                 request.endpoint: {% request.endpoint %}
                 </ul>
 
               {% endblock %}
