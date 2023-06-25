@@ -109,8 +109,6 @@
                   h.humanize_entity_type('group', group_type, 'main nav') or _('Groups'), ['group']),
 		            ('home.about', _('About')) ) }}
                 {% endblock %}
-
-                 request.endpoint: {% request.endpoint %}
                 </ul>
 
               {% endblock %}
@@ -123,7 +121,7 @@
                   <input id="field-sitewide-search" class="form-control me-2" type="text" name="q"
                          placeholder="{{ _('Search') }}"
                          aria-label="{{ h.humanize_entity_type('package', dataset_type, 'search_placeholder') or _('Search datasets...') }}"/>
-                  <button class="btn" type="submit" aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i></button>
+                  <button class="btn" type="submit" aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i>request.path: {{ request.path }}</button>
                 </form>
               {% endblock %}
 {#            {% endif %}#}
