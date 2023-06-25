@@ -93,9 +93,15 @@ $notificationsBg: #C9403A;
 
 .masthead-fixed {
   position: fixed;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
+}
+@include media-breakpoint-down(lg) {
+  .masthead-fixed {
+    padding: 0;
+  }
 }
 
 .masthead {
