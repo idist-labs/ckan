@@ -138,18 +138,33 @@
       color: $dark;
     }
 
+    img {
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    }
+
     &:hover {
       color: $danger;
       transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
       box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.15), 2px 2px 5px rgba(161, 16, 6, 0.11);
+
       a {
         color: #cc0d00;
       }
+
       img {
-        transform: scale(1.2);
+        transform: scale(1.05);
         transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
         fill: #cc0d00;
       }
+    }
+  }
+}
+
+
+#extra-information {
+  .card {
+    img {
+      border-radius: 10px;
     }
   }
 }

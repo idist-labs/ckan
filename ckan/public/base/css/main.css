@@ -13474,6 +13474,9 @@ td.diff_header {
 #you_known .group-card a {
   color: #333333;
 }
+#you_known .group-card img {
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
 #you_known .group-card:hover {
   color: #d43f3a;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
@@ -13483,9 +13486,13 @@ td.diff_header {
   color: #cc0d00;
 }
 #you_known .group-card:hover img {
-  transform: scale(1.2);
+  transform: scale(1.05);
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
   fill: #cc0d00;
+}
+
+#extra-information .card img {
+  border-radius: 10px;
 }
 
 .account-masthead {
