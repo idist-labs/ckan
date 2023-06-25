@@ -101,6 +101,8 @@ $notificationsBg: #C9403A;
 .masthead {
   //background: $mastheadBackgroundColor url("#{$bgPath}");
   background: $mastheadBackgroundColor;
+  border-radius: 15px;
+  margin-top: 5px;
   @extend .p-2;
 
   .debug {
@@ -187,6 +189,9 @@ $notificationsBg: #C9403A;
 
 @include media-breakpoint-down(lg) {
   .masthead {
+    border-radius: 0;
+    margin-top: 0;
+
     .main-navbar {
       ul {
         padding: 0;

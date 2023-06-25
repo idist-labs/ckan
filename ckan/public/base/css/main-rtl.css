@@ -13532,6 +13532,8 @@ td.diff_header {
 
 .masthead {
   background: #2067DD;
+  border-radius: 15px;
+  margin-top: 5px;
 }
 .masthead .debug {
   position: fixed;
@@ -13594,6 +13596,10 @@ td.diff_header {
 }
 
 @media (max-width: 991.98px) {
+  .masthead {
+    border-radius: 0;
+    margin-top: 0;
+  }
   .masthead .main-navbar ul {
     padding: 0;
   }
