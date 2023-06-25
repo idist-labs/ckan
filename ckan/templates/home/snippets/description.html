@@ -4,12 +4,8 @@
       <div id="content" class="container mt-0 mt-md-4 px-0">
         <div class="row">
           <div class="col-lg-12 mx-auto">
-
             <div class="flash-messages">
-
-
             </div>
-
           </div>
         </div>
       </div>
@@ -20,16 +16,11 @@
           <div class="row">
             <div class="col-lg-6 my-auto">
               <h3 class="mt-5 mt-lg-0">Bạn biết không?</h3>
-              <!-- <h3 class="mt-5 mt-lg-0">Bạn có biết?</h3> -->
               <p class="pe-2 text-justify">
-
-                Dữ liệu mở của cơ quan nhà nước là dữ liệu mở được cơ quan nhà nước có thẩm quyền công bố rộng rãi
-                cho
-                cơ quan, tổ chức,
-                cá nhân tự do sử dụng, tái sử dụng, chia sẻ.
-
+                Dữ liệu mở của cơ quan nhà nước là dữ liệu mở được cơ quan nhà nước có thẩm quyền công bố rộng rãi cho
+                cơ quan, tổ chức, cá nhân tự do sử dụng, tái sử dụng, chia sẻ.
               </p>
-              <a href="https://opendata.ptit.edu.vn/about" class="text-primary icon-move-right">
+              <a href="{% url_for 'home.about' %}" class="text-primary icon-move-right">
                 Xem thêm
                 <i class="fa fa-arrow-right text-sm ms-1"></i>
               </a>
@@ -102,8 +93,8 @@
                   <!-- <a href="https://opendata.ptit.edu.vn/about" class="btn btn-white mt-4">
                     Tìm hiểu thêm
                   </a> -->
-                  <a href="https://ais.aisenote.com/cong-thong-tin-viec-lam/file/646d87ab0a4aa31cee587a4b"
-                     target="_blank" class="btn btn-white mt-4">
+                  <a href="{% url_for 'home.about' %}"
+                     target="_blank" class="btn btn-info mt-4">
                     Tìm hiểu thêm
                   </a>
                 </div>
