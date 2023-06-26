@@ -1,33 +1,147 @@
 <footer class="site-footer">
   <div class="container">
-    {% block footer_content %}
     <div class="row">
-      <div class="col-md-8 footer-links">
-        {% block footer_nav %}
-          <ul class="list-unstyled">
-            {% block footer_links %}
-              <li><a href="{{ h.url_for('home.about') }}">{{ _('About {0}').format(g.site_title) }}</a></li>
-            {% endblock %}
+      <div class="col-md-5 mb-4 ms-auto">
+        <div>
+          <a href="#" class="me-3">
+            <img src="/base/images/ptit.png" style="height: 80px" alt="main_logo" target="_blank">
+          </a>
+          <a href="/">
+            <h6 class="font-weight-bolder mt-2">Thanh Oai B Opendata Centre</h6>
+          </a>
+          <p style="font-size: 0.85rem">
+            TRƯỜNG THPT THANH OAI B<br>
+            Địa chỉ: Thôn Tê Quả, xã Tâm Hưng, Huyện Thanh Oai, Thành phố Hà Nội<br>
+            Phone: 024 1234 1234<br>
+            Email: c3thanhoaib@hanoiedu.vn
+          </p>
+        </div>
+        <div>
+          <ul class="d-flex flex-row ms-n3 nav">
+            <li class="nav-item">
+              <a class="nav-link pe-1" href="https://www.facebook.com" target="_blank">
+                <i class="fa fa-facebook text-lg opacity-8"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link pe-1" href="https://twitter.com" target="_blank">
+                <i class="fa fa-twitter text-lg opacity-8"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link pe-1" href="https://github.com" target="_blank">
+                <i class="fa fa-github text-lg opacity-8"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link pe-1" href="https://www.youtube.com" target="_blank">
+                <i class="fa fa-youtube text-lg opacity-8"></i>
+              </a>
+            </li>
           </ul>
-          <ul class="list-unstyled">
-            {% block footer_links_ckan %}
-              {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}
-              <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>
-              <li><a href="http://www.ckan.org/">{{ _('CKAN Association') }}</a></li>
-              <li><a href="http://www.opendefinition.org/okd/"><img src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data"></a></li>
-            {% endblock %}
-          </ul>
-        {% endblock %}
+        </div>
       </div>
-      <div class="col-md-4 attribution">
-        {% block footer_attribution %}
-          <p>{% trans %}<strong>Powered by</strong> <a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}</p>
-        {% endblock %}
-        {% block footer_lang %}
-          {% snippet "snippets/language_selector.html" %}
-        {% endblock %}
+
+      <div class="col-md-2 col-sm-6 col-6 mb-4">
+        <div>
+          <h6 class="text-sm">Tài nguyên</h6>
+          <ul class="flex-column ms-n3 nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/organization/"> Tổ chức </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/dataset/">
+                Dữ liệu
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/group/">
+                Nhóm
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-6 col-6 mb-4">
+        <div>
+          <h6 class="text-sm">Giúp đỡ &amp; Hỗ trợ</h6>
+          <ul class="flex-column ms-n3 nav">
+            <li class="nav-item">
+              <a class="nav-link" href="http://ptit.edu.vn/" target="_blank">
+                PTIT Portal
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="https://open.data.gov.vn/" target="_blank">
+                OPEN Data
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="https://mic.gov.vn/mic_2020/Pages/trangchu_2020.aspx" target="_blank">
+                Bộ Thông tin và Truyền thông
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="https://aita.gov.vn/" target="_blank">
+                Cục Chuyển đổi số Quốc Gia
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-6 col-6 mb-4 me-auto">
+         {% block footer_lang %}
+            {% snippet "snippets/language_selector.html" %}
+          {% endblock %}
+      </div>
+
+      <div class="col-12">
+        <div class="text-center">
+          <p class="text-dark my-4 text-sm font-weight-normal">
+            Sản phẩm này phục vụ đề tài thạc sĩ. <br>
+            Phát triển bởi <a href="#" target="_blank">Nguyễn Văn Dũng</a>.
+          </p>
+        </div>
       </div>
     </div>
-    {% endblock %}
   </div>
+
+
+{#  <div class="container">#}
+{#    {% block footer_content %}#}
+{#      <div class="row">#}
+{#        <div class="col-md-8 footer-links">#}
+{#          {% block footer_nav %}#}
+{#            <ul class="list-unstyled">#}
+{#              {% block footer_links %}#}
+{#                <li><a href="{{ h.url_for('home.about') }}">{{ _('About {0}').format(g.site_title) }}</a></li>#}
+{#              {% endblock %}#}
+{#            </ul>#}
+{#            <ul class="list-unstyled">#}
+{#              {% block footer_links_ckan %}#}
+{#                {% set api_url = 'http://docs.ckan.org/en/{0}/api/'.format(g.ckan_doc_version) %}#}
+{#                <li><a href="{{ api_url }}">{{ _('CKAN API') }}</a></li>#}
+{#                <li><a href="http://www.ckan.org/">{{ _('CKAN Association') }}</a></li>#}
+{#                <li><a href="http://www.opendefinition.org/okd/"><img#}
+{#                  src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data"></a></li>#}
+{#              {% endblock %}#}
+{#            </ul>#}
+{#          {% endblock %}#}
+{#        </div>#}
+{#        <div class="col-md-4 attribution">#}
+{##}
+{#        </div>#}
+{#      </div>#}
+{#    {% endblock %}#}
+{#  </div>#}
 </footer>
