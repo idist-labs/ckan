@@ -35,7 +35,8 @@ fl_notes.txt
 ckan/public/base/less/custom.less
 
 # nosetest coverage output
-.coverage
+.coverageDon't support
+
 htmlcov/*
 
 # CKAN
