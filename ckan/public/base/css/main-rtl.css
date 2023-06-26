@@ -13113,7 +13113,8 @@ td.diff_header {
 }
 
 .main {
-  padding: 20px 0;
+  padding-top: 100px;
+  padding-bottom: 20px;
   background: #eee url("../../../base/images/bg.png");
 }
 
