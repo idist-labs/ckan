@@ -142,5 +142,5 @@ a.tag:hover {
     background-color: $body-bg;
     border: 1px solid $layoutTrimBorderColor;
     @include border-radius(4px);
-    @include box-shadow(0 0 0 4px rgba(0, 0, 0, 0.05));
+    //@include box-shadow(0 0 0 4px rgba(0, 0, 0, 0.05));
 }
