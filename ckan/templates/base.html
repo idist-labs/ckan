@@ -102,7 +102,6 @@
           width: 100%;
           height: 100%;
           background-color: #ffffff;
-          background-image: url("");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: 50% 50%;
@@ -171,9 +170,9 @@
             minDistance = customLinksOptions.minDistance * pixelRatio,
             increaseTime = customLinksOptions.increaseTime * 1000;
 
-          // this function is called before the movement, it's a good point to update options since they are not used yet.
-          There
-          's also a second parameter delta that contains a delta object for calculating time passed since previous frame
+          {#// this function is called before the movement, it's a good point to update options since they are not used yet.#}
+          {#There#}
+          {#'s also a second parameter delta that contains a delta object for calculating time passed since previous frame#}
 
           if (particle.linkIncreaseTime === undefined) {
             particle.linkIncreaseTime = 0;
@@ -207,8 +206,8 @@
       };
     },
     loadOptions: () => {
-    } // you can customize options here, destination options are the first parameter, source options
-    are the second one
+    }
+    {#// you can customize options here, destination options are the first parameter, source options are the second one#}
   };
 
   tsParticles.addPlugin(customLinksPlugin);
