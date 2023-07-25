@@ -22,29 +22,34 @@
 {#</div>#}
 
 <header class="header-2">
-    <div class="page-header min-vh-75 relative"
-         style="background-image: url('/base/images/bg4.jpeg'); transform: translate3d(0px, 0px, 0px);min-height: 75vh">
-      <span class="mask bg-gradient-primary opacity-1"></span>
-      <div class="container header-search-box">
-        <div class="row">
-          <div class="col-lg-7 text-center mx-auto">
-            <h1 class="text-white pt-3 mt-n5 mb-2">Thanh Oai B Opendata Centre</h1>
-            <p class="lead text-white">Unlock Innovative Potentials</p>
-            <form action="{% url_for dataset_type ~ '.search' %}" method="get">
-              <div class="row">
-                <div class="col-lg-9 col-md-8 col-sm-12">
-                  <div class="input-group input-group-outline">
-                    <input type="text" class="form-control" name="q" placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}"
-                           style="background-color: rgb(150 229 252 / 18%); color: white">
-                  </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-12 ps-0 d-grid">
-                  <button type="submit" class="btn bg-gradient-primary text-white"><i class="fa fa-search"></i> Đến</button>
+
+  <div class="page-header min-vh-75 relative"
+       style="background-image: url('/base/images/bg4.jpeg'); transform: translate3d(0px, 0px, 0px);min-height: 75vh">
+    <div id="tsparticles"></div>
+
+    <span class="mask bg-gradient-primary opacity-1"></span>
+    <div class="container header-search-box">
+      <div class="row">
+        <div class="col-lg-7 text-center mx-auto">
+          <h1 class="text-white pt-3 mt-n5 mb-2">Thanh Oai B Opendata Centre</h1>
+          <p class="lead text-white">Unlock Innovative Potentials</p>
+          <form action="{% url_for dataset_type ~ '.search' %}" method="get">
+            <div class="row">
+              <div class="col-lg-9 col-md-8 col-sm-12">
+                <div class="input-group input-group-outline">
+                  <input type="text" class="form-control" name="q"
+                         placeholder="{% block search_placeholder %}{{ placeholder }}{% endblock %}"
+                         style="background-color: rgb(150 229 252 / 18%); color: white">
                 </div>
               </div>
-            </form>
-          </div>
+              <div class="col-lg-3 col-md-4 col-sm-12 ps-0 d-grid">
+                <button type="submit" class="btn bg-gradient-primary text-white"><i class="fa fa-search"></i> Đến
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
