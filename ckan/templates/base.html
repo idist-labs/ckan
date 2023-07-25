@@ -3,14 +3,15 @@
 
 {# Allows custom attributes to be added to the <html> tag #}
 {%- block htmltag -%}
-{% set lang = h.lang() %}
-<!--[if IE 9]> <html lang="{{ lang }}" class="ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="{{ lang }}" {% if h.is_rtl_language()  %} dir="rtl" {% endif %} > <!--<![endif]-->
+  {% set lang = h.lang() %}
+  <!--[if IE 9]> <html lang="{{ lang }}" class="ie9"> <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <html lang="{{ lang }}" {% if h.is_rtl_language() %} dir="rtl" {% endif %} > <!--<![endif]-->
 {%- endblock -%}
 
-  {# Allows custom attributes to be added to the <head> tag #}
-  <head{% block headtag %}{% endblock %}>
-    {#
+{# Allows custom attributes to be added to the <head> tag #}
+<head{% block headtag %}{% endblock %}>
+  {#
     Add custom meta tags to the page. Call super() to get the default tags
     such as charset, viewport and generator.
 
@@ -22,16 +23,18 @@
     {% endblock %}
 
     #}
-    {%- block meta -%}
-      <meta charset="utf-8" />
-      <meta name="csrf_field_name" content="{{ g.csrf_field_name }}" />
-      <meta name="{{ g.csrf_field_name }}" content="{{ csrf_token() }}" />
+  {%- block meta -%}
+    <meta charset="utf-8"/>
+    <meta name="csrf_field_name" content="{{ g.csrf_field_name }}"/>
+    <meta name="{{ g.csrf_field_name }}" content="{{ csrf_token() }}"/>
 
-      {% block meta_generator %}<meta name="generator" content="ckan {{ h.ckan_version() }}" />{% endblock %}
-      {% block meta_viewport %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endblock %}
-    {%- endblock -%}
+    {% block meta_generator %}
+      <meta name="generator" content="ckan {{ h.ckan_version() }}"/>{% endblock %}
+    {% block meta_viewport %}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">{% endblock %}
+  {%- endblock -%}
 
-    {#
+  {#
     Add a custom title to the page by extending the title block. Call super()
     to get the default page title.
 
@@ -40,23 +43,23 @@
       {% block title %}My Subtitle - {{ super() }}{% endblock %}
 
     #}
-    <title>
-      Thanh Oai B - {%- block title -%}
-        {%- block subtitle %}{% endblock -%}
-        {%- if self.subtitle()|trim %} {{ g.template_title_delimiter }} {% endif -%}
-        {{ g.site_title }}
-      {%- endblock -%}
-    </title>
+  <title>
+    Thanh Oai B - {%- block title -%}
+    {%- block subtitle %}{% endblock -%}
+    {%- if self.subtitle()|trim %} {{ g.template_title_delimiter }} {% endif -%}
+    {{ g.site_title }}
+  {%- endblock -%}
+  </title>
 
-    {#
+  {#
     The links block allows you to add additonal content before the stylesheets
     such as rss feeds and favicons in the same way as the meta block.
     #}
-    {% block links -%}
-      <link rel="shortcut icon" href="{{ g.favicon }}" />
-    {% endblock -%}
+  {% block links -%}
+    <link rel="shortcut icon" href="{{ g.favicon }}"/>
+  {% endblock -%}
 
-    {#
+  {#
     The styles block allows you to add additonal stylesheets to the page in
     the same way as the meta block. Use super() to include the default
     stylesheets before or after your own.
@@ -68,33 +71,54 @@
         <link rel="stylesheet" href="/base/css/custom.css" />
       {% endblock %}
     #}
-    {%- block styles %}
-      {# TODO: store just name of asset instead of path to it. #}
-      {% set theme = h.get_rtl_theme() if h.is_rtl_language() else g.theme %}
-      {% asset theme %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    {% endblock %}
+  {%- block styles %}
+    {# TODO: store just name of asset instead of path to it. #}
+    {% set theme = h.get_rtl_theme() if h.is_rtl_language() else g.theme %}
+    {% asset theme %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  {% endblock %}
 
-    {% block head_extras %}
-      {# defined in the config.ini under "ckan.template_head_end" #}
-      {{ g.template_head_end | safe }}
-    {% endblock %}
+  {% block head_extras %}
+    {# defined in the config.ini under "ckan.template_head_end" #}
+    {{ g.template_head_end | safe }}
+  {% endblock %}
 
-    {# render all assets included in styles block #}
-    {{ h.render_assets('style') }}
-    {%- block custom_styles %}
-      {%- if g.site_custom_css -%}
+  {# render all assets included in styles block #}
+  {{ h.render_assets('style') }}
+  {%- block custom_styles %}
+    {%- if g.site_custom_css -%}
       <style>
         {{ g.site_custom_css | safe }}
+
+
+        canvas {
+          display: block;
+          vertical-align: bottom;
+        }
+
+        /* ---- tsparticles container ---- */
+        #tsparticles {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: #ffffff;
+          background-image: url("");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: 50% 50%;
+        }
+
       </style>
-      {%- endif %}
-    {% endblock %}
-  </head>
+    {%- endif %}
+  {% endblock %}
+</head>
 
-  {# Allows custom attributes to be added to the <body> tag #}
-  <body{% block bodytag %} data-site-root="{{ h.url_for('home.index', locale='default', qualified=true) }}" data-locale-root="{{ h.url_for('home.index', qualified=true) }}" {% endblock %}>
+{# Allows custom attributes to be added to the <body> tag #}
+<body{% block bodytag %} data-site-root="{{ h.url_for('home.index', locale='default', qualified=true) }}"
+                         data-locale-root="{{ h.url_for('home.index', qualified=true) }}" {% endblock %}>
+<div id="tsparticles"></div>
 
-    {#
+{#
     The page block allows you to add content to the page. Most of the time it is
     recommended that you extend one of the page.html templates in order to get
     the site header and footer. If you need a clean page then this is the
@@ -106,24 +130,169 @@
         <div>Some other page content</div>
       {% endblock %}
     #}
-    {%- block page %}{% endblock -%}
+{%- block page %}{% endblock -%}
 
-    {#
+{#
     DO NOT USE THIS BLOCK FOR ADDING SCRIPTS
     Scripts should be loaded by the {% assets %} tag except in very special
     circumstances
     #}
-    {%- block scripts %}
-    {% endblock -%}
+{%- block scripts %}
+{% endblock -%}
 
-    {% block body_extras -%}
-      {# defined in the config.ini under "ckan.template_footer_end" #}
-      {{ g.template_footer_end | safe }}
-    {%- endblock %}
+{% block body_extras -%}
+  {# defined in the config.ini under "ckan.template_footer_end" #}
+  {{ g.template_footer_end | safe }}
+{%- endblock %}
 
-    {# render all assets included in scripts block and everywhere else #}
-    {# make sure there are no calls to `asset` tag after this point #}
-    {{ h.render_assets('style') }}
-    {{ h.render_assets('script') }}
-  </body>
+{# render all assets included in scripts block and everywhere else #}
+{# make sure there are no calls to `asset` tag after this point #}
+{{ h.render_assets('style') }}
+{{ h.render_assets('script') }}
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@1.35.1/tsparticles.min.js"></script>
+<script>
+  const customLinksOptions = {
+    increaseTime: 2, // seconds
+    increaseDistance: 2,
+    minDistance: 50,
+    maxDistance: 250
+  };
+
+  const customLinksPlugin = {
+    id: "customLinks",
+    needsPlugin: () => true, // it has options parameter, if you want to customize it
+    getPlugin: () => {
+      // has a container parameter, this is the tsParticles.domItem return value
+      return {
+        particleUpdate: (particle, delta) => {
+          const pixelRatio = particle.container.retina.pixelRatio,
+            increaseDistance = customLinksOptions.increaseDistance * pixelRatio,
+            maxDistance = customLinksOptions.maxDistance * pixelRatio,
+            minDistance = customLinksOptions.minDistance * pixelRatio,
+            increaseTime = customLinksOptions.increaseTime * 1000;
+
+          // this function is called before the movement, it's a good point to update options since they are not used yet.
+          There
+          's also a second parameter delta that contains a delta object for calculating time passed since previous frame
+
+          if (particle.linkIncreaseTime === undefined) {
+            particle.linkIncreaseTime = 0;
+          }
+
+          particle.linkIncreaseTime += delta.value;
+
+          if (particle.linkIncreaseTime < increaseTime) {
+            return;
+          }
+
+          particle.linkIncreaseTime -= increaseTime;
+
+          if (particle.linkIncreasing === undefined) {
+            particle.linkIncreasing = true;
+          }
+
+          if (particle.linkIncreasing) {
+            particle.retina.linksDistance += increaseDistance;
+
+            if (particle.retina.linksDistance > maxDistance) {
+              particle.linkIncreasing = false;
+            }
+          } else {
+            particle.retina.linksDistance -= increaseDistance;
+            if (particle.retina.linksDistance < minDistance) {
+              particle.linkIncreasing = true;
+            }
+          }
+        }
+      };
+    },
+    loadOptions: () => {
+    } // you can customize options here, destination options are the first parameter, source options
+    are the second one
+  };
+
+  tsParticles.addPlugin(customLinksPlugin);
+
+  tsParticles.load("tsparticles", {
+    fps_limit: 60,
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onclick: {enable: true, mode: "push"},
+        onhover: {
+          enable: true,
+          mode: "repulse",
+          parallax: {enable: false, force: 60, smooth: 10}
+        },
+        resize: true
+      },
+      modes: {
+        bubble: {distance: 400, duration: 2, opacity: 0.8, size: 40, speed: 3},
+        grab: {distance: 400, line_linked: {opacity: 1}},
+        push: {particles_nb: 4},
+        remove: {particles_nb: 2},
+        repulse: {distance: 200, duration: 0.4}
+      }
+    },
+    particles: {
+      color: {value: "#0A76FF"},
+      line_linked: {
+        color: "#0A76FF",
+        distance: 100,
+        enable: true,
+        opacity: 0.2,
+        width: 1
+      },
+      move: {
+        attract: {enable: true, rotateX: 600, rotateY: 1200},
+        bounce: false,
+        direction: "none",
+        enable: true,
+        out_mode: "out",
+        random: false,
+        speed: 2,
+        straight: false
+      },
+      number: {density: {enable: true, value_area: 800}, value: 80},
+      opacity: {
+        anim: {enable: false, opacity_min: 0.1, speed: 1, sync: false},
+        random: false,
+        value: 0.5
+      },
+      shape: {
+        character: {
+          fill: false,
+          font: "Verdana",
+          style: "",
+          value: "*",
+          weight: "400"
+        },
+        image: {
+          height: 100,
+          replace_color: true,
+          src: "images/github.svg",
+          width: 100
+        },
+        polygon: {nb_sides: 5},
+        stroke: {color: "#000000", width: 0},
+        type: "circle"
+      },
+      size: {
+        anim: {enable: false, size_min: 0.1, speed: 40, sync: false},
+        random: true,
+        value: 5
+      }
+    },
+    polygon: {
+      draw: {enable: false, lineColor: "#ffffff", lineWidth: 0.5},
+      move: {radius: 10},
+      scale: 1,
+      type: "none",
+      url: ""
+    },
+    retina_detect: true
+  });
+
+</script>
+</body>
 </html>
