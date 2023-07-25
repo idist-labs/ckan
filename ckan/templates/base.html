@@ -89,8 +89,10 @@
     {%- if g.site_custom_css -%}
       <style>
         {{ g.site_custom_css | safe }}
-
-
+      </style>
+    {%- endif %}
+  {% endblock %}
+  <style>
         canvas {
           display: block;
           vertical-align: bottom;
@@ -107,9 +109,7 @@
           background-position: 50% 50%;
         }
 
-      </style>
-    {%- endif %}
-  {% endblock %}
+  </style>
 </head>
 
 {# Allows custom attributes to be added to the <body> tag #}
